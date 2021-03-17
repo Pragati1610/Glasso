@@ -1,0 +1,57 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    font-size: 62.5%;
+}
+
+
+/* hr {
+    width: 90%;
+    color: black;
+    background-color: black;
+    border: 0;
+    height: 0.25rem;
+}
+
+.foot {
+    background-color: white;
+    color: balck;
+    width: 40%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+hr {
+    width: 50%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    height: 0.25rem;
+}
+
+.foot {
+    background-color: black;
+    color: white;
+    width: 40%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circ {
+    display: inline-block;
+    width: 1rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    padding: 0 1.5rem;
+}
+
+.dark {
+    background-color: black;
+}
