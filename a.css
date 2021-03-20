@@ -67,33 +67,33 @@
 }
 
 .can-toggle input[type="checkbox"][disabled]~label {
-    color: rgba(119, 119, 119, 0.5);
+    color: rgb(0, 0, 0);
 }
 
 .can-toggle input[type="checkbox"]:focus~label .can-toggle__switch,
 .can-toggle input[type="checkbox"]:hover~label .can-toggle__switch {
-    background-color: #777;
+    background-color: rgb(255, 255, 255);
 }
 
 .can-toggle input[type="checkbox"]:focus~label .can-toggle__switch:after,
 .can-toggle input[type="checkbox"]:hover~label .can-toggle__switch:after {
-    color: #5e5e5e;
+    color: #000000;
 }
 
 .can-toggle input[type="checkbox"]:hover~label {
-    color: #6a6a6a;
+    color: #000000;
 }
 
 .can-toggle input[type="checkbox"]:checked~label:hover {
-    color: #55bc49;
+    color: #000000;
 }
 
 .can-toggle input[type="checkbox"]:checked~label .can-toggle__switch {
-    background-color: #70c767;
+    background-color: #000000;
 }
 
 .can-toggle input[type="checkbox"]:checked~label .can-toggle__switch:after {
-    color: #4fb743;
+    color: #000000;
 }
 
 .can-toggle input[type="checkbox"]:checked:focus~label .can-toggle__switch,
@@ -112,11 +112,14 @@
 
 .can-toggle label .can-toggle__switch {
     transition: background-color 0.3s cubic-bezier(0, 1, 0.5, 1);
-    background: #848484;
+    background: #000000;
 }
 
+
+/* Login unhighlighted */
+
 .can-toggle label .can-toggle__switch:before {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 1);
 }
 
 .can-toggle label .can-toggle__switch:after {
