@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto+Mono:wght@200&family=Syne+Mono&display=swap');
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Nunito', sans-serif;
 }
 
 html {
@@ -14,11 +16,14 @@ img {
     height: 65rem;
 }
 
+#pass {
+    color: white;
+}
+
 
 /* split screen */
 
-
-/* .split {
+.split {
     height: 100%;
     width: 50%;
     position: fixed;
@@ -30,11 +35,51 @@ img {
 
 .left {
     left: 0;
-    background-color: #111;
+    background-color: #000;
+    color: white;
 }
 
 .right {
     right: 0;
+}
+
+.right>img {
+    width: 50rem;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+#google {
+    width: 20rem;
+    height: 5rem;
+    position: absolute;
+    left: 50%;
+    top: -5rem;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border: 0;
+}
+
+#gauth {
+    width: 20rem;
+    height: 5rem;
+}
+
+.line {
+    width: 5rem;
+    display: inline-block;
+}
+
+.p {
+    text-align: center;
+}
+
+.middle {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .centered {
@@ -42,14 +87,73 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
-} */
+    /* text-align: center; */
+    font-size: 2rem;
+    line-height: 5rem;
+}
+
+hr {
+    width: 50rem;
+    border: 0;
+    height: 0.1rem;
+    background-color: white;
+}
+
+.can-toggle {
+    justify-content: center;
+}
+
+
+/* form */
+
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    outline: none;
+    color: white;
+    font-size: 2rem;
+}
+
+input:focus {
+    background-color: rgb(0, 0, 0);
+}
+
+.cent {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+    align-items: center;
+    min-height: 30vh;
+}
+
+.login {
+    display: none;
+}
+
+#sub {
+    width: 10rem;
+    padding: 1rem;
+    border-radius: 5rem;
+}
+
+#ref {
+    width: 10rem;
+    padding: 1rem;
+    border-radius: 5rem;
+}
 
 
 /* Button */
 
+.btn {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+}
+
 .can-toggle {
-    position: relative;
+    transform: translateX(-150%)
 }
 
 .can-toggle *,
@@ -123,10 +227,17 @@ img {
     color: rgba(0, 0, 0, 1);
 }
 
+
+/* signup highlighted back */
+
 .can-toggle input[type="checkbox"]:focus~label .can-toggle__switch,
 .can-toggle input[type="checkbox"]:hover~label .can-toggle__switch {
-    background-color: rgb(0, 0, 0);
+    background-color: #000;
+    ;
 }
+
+
+/* signup highlighted */
 
 .can-toggle input[type="checkbox"]:focus~label .can-toggle__switch:after,
 .can-toggle input[type="checkbox"]:hover~label .can-toggle__switch:after {
@@ -153,6 +264,9 @@ img {
 .can-toggle input[type="checkbox"]:checked:hover~label .can-toggle__switch {
     background-color: #000000;
 }
+
+
+/* login highlighted */
 
 .can-toggle input[type="checkbox"]:checked:focus~label .can-toggle__switch:after,
 .can-toggle input[type="checkbox"]:checked:hover~label .can-toggle__switch:after {
@@ -200,6 +314,7 @@ img {
     height: 36px;
     flex: 0 0 134px;
     border-radius: 50px;
+    border: white;
 }
 
 .can-toggle label .can-toggle__switch:before {

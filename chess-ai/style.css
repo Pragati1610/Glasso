@@ -1,0 +1,123 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    font-size: 62.5%;
+}
+
+.main {
+    margin-top: 250px;
+}
+
+.board {
+    width: 400px;
+    margin: auto
+}
+
+.info {
+    width: 400px;
+    margin: auto;
+}
+
+.move-history {
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+.top {
+    width: 10rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5rem;
+}
+
+.profile {
+    width: 9rem;
+    position: absolute;
+    left: 72%;
+    transform: translateX(-50%);
+    top: 4rem;
+}
+
+.line {
+    width: 50%;
+    color: black;
+    background-color: black;
+    border: 0;
+    height: 0.25rem;
+    position: absolute;
+    left: 50%;
+    top: 17rem;
+    transform: translateX(-50%);
+}
+
+.logout {
+    color: #999999 !important;
+    text-transform: uppercase;
+    background: #ffffff;
+    padding: 0.5rem;
+    border: 0.5rem px solid #000 !important;
+    border-radius: 5rem;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    position: absolute;
+    top: 13.7rem;
+    left: 72%;
+    transform: translateX(-50%);
+}
+
+.logout:hover {
+    color: #494949 !important;
+    border-color: #494949 !important;
+    border-radius: 0px;
+    transition: all 0.3s ease 0s;
+}
+
+
+/* nav bar */
+
+.nav {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 20rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.example_e {
+    border: none;
+    background: #ffffff;
+    color: #000000 !important;
+    font-weight: 100;
+    padding: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 5rem;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    width: 15.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.example_e:hover {
+    color: #ffffff !important;
+    background-color: black;
+    font-weight: 700 !important;
+    letter-spacing: 4px;
+    /* background: none; */
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.3s ease 0s;
+}
+
+.fleft {
+    float: left;
+}

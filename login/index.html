@@ -11,13 +11,20 @@
 
 <body>
     <div class="split left">
+        <hr>
         <div class="centered">
             <div id="oauth">
-                <img src="" alt="">
+                <button id="google"><a href=""><img id="gauth" src="../assets/google.png" alt=""></a></button>
             </div>
-            <hr>
+
+            <div class="middle">
+                <hr class="line">
+                <p class="line p">OR</p>
+                <hr class="line">
+            </div>
+            <br>
             <div id="f1">
-                <div>
+                <div class="btn">
                     <div class="can-toggle">
                         <input id="a" type="checkbox">
                         <label for="a">
@@ -26,18 +33,114 @@
                         </label>
                     </div>
                 </div>
-                <form action=""></form>
+                <br>
+                <div class="signup cent">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="name">Name: </label>
+                            </td>
+                            <td>
+                                <input type="text" name="name" autocomplete="off">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="email">Email: </label>
+                            </td>
+                            <td>
+                                <input type="text" name="email" autocomplete="off">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="user">Username: </label></td>
+                            <td>
+                                <input type="text" name="user" autocomplete="off">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="pass">Password: </label>
+                            </td>
+                            <td>
+                                <input type="password" name="pass" id="pass" autocomplete="off" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="retype">Retype: </label>
+                            </td>
+                            <td>
+                                <input type="password" name="retype" id="pass" autocomplete="off" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <br>
+                                <button id="sub" type="submit">Submit</button>
+                                <button id="ref" type="reset">Refresh</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="login cent">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="user">Username: </label>
+                            </td>
+                            <td>
+                                <input type="text" name="user" autocomplete="off">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="pass">Password: </label>
+                            </td>
+                            <td>
+                                <input type="text" name="pass" autocomplete="off">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <br>
+                                <button id="sub" type="submit">Submit</button>
+                                <button id="ref" type="reset">Refresh</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <hr>
             </div>
         </div>
 
-        <div class="centered">
-            <!-- <img src="../assets/icon.svg" alt=""> -->
+        <div class="centered ">
         </div>
     </div>
 
     <div class="split right">
-
+        <img src="../assets/icon.svg" alt="">
     </div>
+
+    <script>
+        let a = document.getElementById("a");
+        let login = document.querySelector(".login");
+        let signup = document.querySelector(".signup");
+        a.addEventListener("click", () => {
+            if (a.checked) {
+                login.style.display = "grid";
+                signup.style.display = "none";
+            } else {
+                signup.style.display = "grid";
+                login.style.display = "none";
+            }
+        });
+        let ip = (document.querySelectorAll("input"));
+        for (var i = 1; i < 8; i++) {
+
+        }
+    </script>
+
 </body>
 
 </html>
