@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    background: url(../assets/background.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#top {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 20rem;
+    color: white;
+    font-weight: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: -5rem 0 0 0;
+}
+
+#bottom {
+    color: white;
+    font-weight: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 15rem 0 0 0;
+}
+
+
+/* button */
+
+a {
+    font-weight: 900;
+    position: relative;
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 2.4rem;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #000000;
+    background: #b8b8b8;
+    box-shadow: 0 0 10px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
+    /* transition-delay: 1s; */
+}
+
+@media only screen and (max-width: 3000px) {
+    a span {
+        position: absolute;
+        display: block;
+    }
+    a span:nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #ffffff);
+    }
+    a:hover span:nth-child(1) {
+        left: 100%;
+        transition: 1s;
+    }
+    a span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, #ffffff);
+    }
+    a:hover span:nth-child(3) {
+        right: 100%;
+        transition: 1s;
+        transition-delay: 0.5s;
+    }
+    a span:nth-child(2) {
+        right: 0;
+        top: -100%;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, #ffffff);
+    }
+    a:hover span:nth-child(2) {
+        top: 100%;
+        transition: 1s;
+        transition-delay: 0.25s;
+    }
+    a span:nth-child(4) {
+        left: 0;
+        bottom: -100%;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, #ffffff);
+    }
+    a:hover span:nth-child(4) {
+        bottom: 100%;
+        transition: 1s;
+        transition-delay: 0.75s;
+    }
+}
+
+@media only screen and (max-width: 591px) {
+    html {
+        font-size: 31.25%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    /*Small smartphones [325px -> 425px]*/
+}
