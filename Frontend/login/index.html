@@ -41,7 +41,7 @@
                                 <label for="name">Name: </label>
                             </td>
                             <td>
-                                <input type="text" name="name" autocomplete="off">
+                                <input type="text" name="name" autocomplete="off" pattern="/[A-Za-z0-9]+/" id="name">
                             </td>
                         </tr>
                         <tr>
@@ -49,13 +49,13 @@
                                 <label for="email">Email: </label>
                             </td>
                             <td>
-                                <input type="text" name="email" pattern="[A-Za-z0-9]?@[a-z]?\.[a-z]?" autocomplete="off">
+                                <input type="text" name="email" pattern="/^[A-Za-z][A-Za-z0-9]*@[A-Za-z]+\.[a-z]{2,4}$/" autocomplete="off" id="email">
                             </td>
                         </tr>
                         <tr>
                             <td><label for="user">Username: </label></td>
                             <td>
-                                <input type="text" name="user" maxlength="8" autocomplete="off">
+                                <input type="text" name="user" maxlength="8" autocomplete="off" id="username">
                             </td>
                         </tr>
                         <tr>
@@ -63,7 +63,7 @@
                                 <label for="pass">Password: </label>
                             </td>
                             <td>
-                                <input type="password" name="pass" id="pass" autocomplete="off" required>
+                                <input type="password" name="pass" id="pass" autocomplete="off" required id="pass1">
                             </td>
                         </tr>
                         <tr>
@@ -71,13 +71,13 @@
                                 <label for="retype">Retype: </label>
                             </td>
                             <td>
-                                <input type="password" name="retype" id="pass" autocomplete="off" required>
+                                <input type="password" name="retype" id="pass" autocomplete="off" required id="pass2">
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" align="center">
                                 <br>
-                                <a href="../home/index.html"> <button id="sub" type="submit"> Submit</button></a>
+                                <a> <button id="sub" type="submit" onclick="regexTestSignup()"> Submit</button></a>
                                 <button id="ref" type="reset">Refresh</button>
                             </td>
                         </tr>
@@ -90,7 +90,7 @@
                                 <label for="user">Username: </label>
                             </td>
                             <td>
-                                <input type="text" name="user" autocomplete="off">
+                                <input type="text" name="user" autocomplete="off" id="usernameLogin">
                             </td>
                         </tr>
                         <tr>
@@ -98,13 +98,13 @@
                                 <label for="pass">Password: </label>
                             </td>
                             <td>
-                                <input type="text" name="pass" autocomplete="off">
+                                <input type="password" name="pass" id="pass" autocomplete="off">
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" align="center">
                                 <br>
-                                <a href="../home/index.html"> <button id="sub" type="submit"> Submit</button></a>
+                                <a> <button id="sub" type="submit" onclick="regexTestLogin()"> Submit</button></a>
                                 <button id="ref" type="reset">Refresh</button>
                             </td>
                         </tr>
@@ -136,8 +136,35 @@
             }
         });
         let ip = (document.querySelectorAll("input"));
-        for (var i = 1; i < 8; i++) {
 
+        // REGEX
+        function regexTestLogin() {
+            let username = document.getElementById("usernameLogin").value
+            console.log(username)
+            if (!(username.match(/[A-Za-z]{1}[A-Za-z0-9]{7,}/g))) {
+                alert("please create username according to guidelines: ")
+            } else {
+                document.location.href = "../home/index.html"
+            }
+        }
+
+        function regexTestSignup() {
+            let username = document.getElementById("username").value
+            let name = document.getElementById("name").value
+            let email = document.getElementById("email").value
+            let pass1 = document.getElementById("pass1").value
+            let pass2 = document.getElementById("pass2").value
+            if (!(name.match(/[A-Za-z]/g))) {
+                alert("please create name according to guidelines: presence of only letters")
+            } else if (!(email.match(/^[A-Za-z][A-Za-z0-9.]*@[A-Za-z]+\.[a-z]{2,4}$/))) {
+                alert("please create email according to guidelines: \nformat: a90jd@ajs.com \n1. start with letter\n2. presence of @ followed by some text and .\n3. end should be by a domain name of length ranging between 2-4")
+            } else if (!(username.match(/[A-Za-z]{1}[A-Za-z0-9]{7,}/g))) {
+                alert("please create username according to guidelines: start with a letter, minimum length 8")
+            } else if (pass1 != pass2) {
+                alert("password not retyped correctly, please try again")
+            } else {
+                document.location.href = "../home/index.html"
+            }
         }
     </script>
 
