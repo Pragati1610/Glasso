@@ -9,6 +9,8 @@ const morgan = require('./logging/morgan')
 require('./models/relations')
 
 const routes = require('./routes')
+const userRouter = require('./routes/userRoute')
+const leaderboardRouter = require('./routes/leaderBoardRoute')
 
 const app = express()
 
@@ -25,5 +27,7 @@ app.use(morgan)
 
 // Mount routes
 app.use('/', routes)
+app.use('/user', userRouter)
+app.use('/leaderboard', leaderboardRouter)
 
 module.exports = app

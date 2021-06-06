@@ -1,8 +1,13 @@
 const User = require('./user')
+const Stats = require('./stats')
 
 if (process.env.SYNC) {
     User.sync({
-        force: true
+        alter: true
+    })
+    Stats.sync({
+        alter: true
     })
 }
-module.exports = { User }
+
+module.exports = { User, Stats }
