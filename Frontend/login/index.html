@@ -35,80 +35,84 @@
                 </div>
                 <br>
                 <div class="signup cent">
-                    <table>
-                        <tr>
-                            <td>
-                                <label for="name">Name: </label>
-                            </td>
-                            <td>
-                                <input type="text" name="name" autocomplete="off" pattern="/[A-Za-z0-9]+/" id="name">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="email">Email: </label>
-                            </td>
-                            <td>
-                                <input type="text" name="email" pattern="/^[A-Za-z][A-Za-z0-9]*@[A-Za-z]+\.[a-z]{2,4}$/" autocomplete="off" id="email">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label for="user">Username: </label></td>
-                            <td>
-                                <input type="text" name="user" maxlength="8" autocomplete="off" id="username">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="pass">Password: </label>
-                            </td>
-                            <td>
-                                <input type="password" name="pass" id="pass" autocomplete="off" required id="pass1">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="retype">Retype: </label>
-                            </td>
-                            <td>
-                                <input type="password" name="retype" id="pass" autocomplete="off" required id="pass2">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" align="center">
-                                <br>
-                                <a> <button id="sub" type="submit" onclick="regexTestSignup()"> Submit</button></a>
-                                <button id="ref" type="reset">Refresh</button>
-                            </td>
-                        </tr>
-                    </table>
+                    <form action="" method="POST" onclick="return regexTestSignup()">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="name">Name: </label>
+                                </td>
+                                <td>
+                                    <input type="text" name="name" autocomplete="off" id="name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="email">Email: </label>
+                                </td>
+                                <td>
+                                    <input type="text" name="email" autocomplete="off" id="email">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="user">Username: </label></td>
+                                <td>
+                                    <input type="text" name="user" maxlength="8" autocomplete="off" id="username">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="pass">Password: </label>
+                                </td>
+                                <td>
+                                    <input type="password" name="pass" id="pass" autocomplete="off" required id="pass1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="retype">Retype: </label>
+                                </td>
+                                <td>
+                                    <input type="password" name="retype" id="pass" autocomplete="off" required id="pass2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <br>
+                                    <a> <button id="sub" type="submit"> Submit</button></a>
+                                    <button id="ref" type="reset">Refresh</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                 </div>
                 <div class="login cent">
-                    <table>
-                        <tr>
-                            <td>
-                                <label for="user">Username: </label>
-                            </td>
-                            <td>
-                                <input type="text" name="user" autocomplete="off" id="usernameLogin">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="pass">Password: </label>
-                            </td>
-                            <td>
-                                <input type="password" name="pass" id="pass" autocomplete="off">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" align="center">
-                                <br>
-                                <a> <button id="sub" type="submit" onclick="regexTestLogin()"> Submit</button></a>
-                                <button id="ref" type="reset">Refresh</button>
-                            </td>
-                        </tr>
-                    </table>
+                    <form action="" method="POST" onclick="return regexTestLogin()">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="user">Username: </label>
+                                </td>
+                                <td>
+                                    <input type="text" name="user" autocomplete="off" id="usernameLogin">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="pass">Password: </label>
+                                </td>
+                                <td>
+                                    <input type="password" name="pass" id="pass" autocomplete="off">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <br>
+                                    <a> <button id="sub" type="submit"> Submit</button></a>
+                                    <button id="ref" type="reset">Refresh</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                 </div>
                 <hr>
             </div>
@@ -154,6 +158,7 @@
             let email = document.getElementById("email").value
             let pass1 = document.getElementById("pass1").value
             let pass2 = document.getElementById("pass2").value
+
             if (!(name.match(/[A-Za-z]/g))) {
                 alert("please create name according to guidelines: presence of only letters")
             } else if (!(email.match(/^[A-Za-z][A-Za-z0-9.]*@[A-Za-z]+\.[a-z]{2,4}$/))) {
@@ -165,6 +170,28 @@
             } else {
                 document.location.href = "../home/index.html"
             }
+
+            let data = {
+                username,
+                email,
+                name,
+                password: pass1
+            }
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }
+
+            try {
+                fetch('http://localhost:3000/user/signup', options)
+            } catch (err) {
+                console.log(err)
+            }
+
         }
     </script>
 
